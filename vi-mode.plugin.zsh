@@ -2,7 +2,6 @@
 function zle-line-init zle-keymap-select() {
   NVI="%{$fg_bold[green]%} [% N]% %{$reset_color%}"
   IVI="%{$fg_bold[blue]%} [% I]% %{$reset_color%}"
-  #RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
   RPS1="${${KEYMAP/vicmd/$NVI}/(main|viins)/$IVI} $EPS1"
   zle reset-prompt
   zle -R
@@ -35,20 +34,8 @@ bindkey '^w' backward-kill-word
 # allow ctrl-r to perform backward search in history
 bindkey '^r' history-incremental-search-backward
 
-# allow ctrl-a and ctrl-e to move to beginning/end of line
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-
-# if mode indicator wasn't setup by theme, define default
-# if [[ "$MODE_INDICATOR" == "" ]]; then
-#   MODE_INDICATOR="%{$fg_bold[red]%}<%{$fg[red]%}<<%{$reset_color%}"
-# fi
-
-# function vi_mode_prompt_info() {
-#   echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
-# }
-
-# # define right prompt, if it wasn't defined by a theme
-# if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
-#   RPS1='$(vi_mode_prompt_info)'
-# fi
+# allow ctrl-a/HOME and ctrl-e/END to move to beginning/end of line
+bindkey '^a'      beginning-of-line
+bindkey '\e[H'    beginning-of-line
+bindkey '^e'      end-of-line
+bindkey '\e[F'    end-of-line
