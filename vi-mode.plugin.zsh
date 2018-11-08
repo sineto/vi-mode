@@ -1,20 +1,7 @@
-# Updates editor information when the keymap changes.
-function zle-line-init zle-keymap-select() {
-  NVI="%{$fg_bold[green]%} [% N]% %{$reset_color%}"
-  IVI="%{$fg_bold[blue]%} [% I]% %{$reset_color%}"
-  RPS1="${${KEYMAP/vicmd/$NVI}/(main|viins)/$IVI} $EPS1"
-  zle reset-prompt
-  zle -R
-}
-
 # Ensure that the prompt is redrawn when the terminal size changes.
 TRAPWINCH() {
   zle && { zle -R; zle reset-prompt }
 }
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-zle -N edit-command-line
 
 bindkey -v
 
