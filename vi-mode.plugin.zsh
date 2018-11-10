@@ -5,6 +5,9 @@ TRAPWINCH() {
 
 bindkey -v
 
+# eliminating delays
+export KEYTIMEOUT=1
+
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
