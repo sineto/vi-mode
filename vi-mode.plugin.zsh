@@ -16,6 +16,10 @@ bindkey -M vicmd 'v' edit-command-line
 bindkey '^P' up-history
 bindkey '^N' down-history
 
+# allow ctrl-j/ctrl-j for navigate history integrated with zsh-history-substring-search
+bindkey -M viins '^k' history-substring-search-up
+bindkey -M viins '^j' history-substring-search-down
+
 # allow ctrl-h, ctrl-w, ctrl-? for char and word deletion (standard behaviour)
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char

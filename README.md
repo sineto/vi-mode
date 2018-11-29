@@ -16,7 +16,7 @@ History
 - `End`    : Go to the end of line
 
 
-Mode indicators
+TODO: Mode indicators
 ---------------
 
 Mark at the right prompt, when it wasn't defined by theme:
@@ -76,3 +76,11 @@ Delete and Insert
 - `R`           : Enter replace mode: Each character replaces existing one
 - `x`           : Delete [count] characters under and after the cursor
 - `X`           : Delete [count] characters before the cursor
+
+Integration with [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
+-----------------------------------------------
+
+- `ctrl-j`    : Select the newer command that contains in your command history
+- `ctrl-k`    : Select the older command that contains in your command history
+
+obs.: these commands works only in `insert` mode.
