@@ -29,3 +29,11 @@ bindkey '^a'      beginning-of-line
 bindkey '\e[H'    beginning-of-line
 bindkey '^e'      end-of-line
 bindkey '\e[F'    end-of-line
+
+# [Home] - Go to beginning of line
+bindkey -M viins "${terminfo[khome]}" beginning-of-line
+bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
+
+# [End] - Go to end of line
+bindkey -M viins "${terminfo[kend]}" end-of-line
+bindkey -M vicmd "${terminfo[kend]}" end-of-line
