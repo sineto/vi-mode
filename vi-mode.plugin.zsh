@@ -12,6 +12,10 @@ export KEYTIMEOUT=1
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
+# mapping <Esc> to escape from vi-insert mode to vi-cmd-mode and vice-versa
+bindkey -M viins '^[' vi-cmd-mode
+bindkey -M vicmd '^[' vi-insert
+
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
 bindkey '^P' up-history
 bindkey '^N' down-history
